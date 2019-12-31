@@ -1,0 +1,454 @@
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.21739130434782608  top10: 0.6782608695652174
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.26956521739130435  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2608695652173913  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.24347826086956523  top10: 0.6869565217391305
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.24347826086956523  top10: 0.6956521739130435
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.23478260869565218  top10: 0.7043478260869566
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.26956521739130435  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.21739130434782608  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.24347826086956523  top10: 0.6347826086956522
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.20869565217391303  top10: 0.6869565217391305
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.23478260869565218  top10: 0.6782608695652174
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.2608695652173913  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2608695652173913  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.21739130434782608  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.23478260869565218  top10: 0.6782608695652174
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.20869565217391303  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.2608695652173913  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.24347826086956523  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.24347826086956523  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.24347826086956523  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.22608695652173913  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.25217391304347825  top10: 0.6782608695652174
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6956521739130435
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.26956521739130435  top10: 0.7043478260869566
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.24347826086956523  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2608695652173913  top10: 0.7304347826086957
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.24347826086956523  top10: 0.6869565217391305
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2608695652173913  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.20869565217391303  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.20869565217391303  top10: 0.6347826086956522
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.2608695652173913  top10: 0.6782608695652174
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.22608695652173913  top10: 0.7043478260869566
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.23478260869565218  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2608695652173913  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.24347826086956523  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6347826086956522
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.20869565217391303  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.23478260869565218  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2608695652173913  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.25217391304347825  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.22608695652173913  top10: 0.6782608695652174
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.22608695652173913  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.24347826086956523  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.26956521739130435  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.24347826086956523  top10: 0.6782608695652174
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2608695652173913  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2608695652173913  top10: 0.6956521739130435
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.24347826086956523  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.24347826086956523  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.26956521739130435  top10: 0.6782608695652174
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.2  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.19130434782608696  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.22608695652173913  top10: 0.6434782608695652
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.21739130434782608  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.26956521739130435  top10: 0.6956521739130435
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.26956521739130435  top10: 0.6521739130434783
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.25217391304347825  top10: 0.6695652173913044
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.3217391304347826  top10: 0.6869565217391305
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.26956521739130435  top10: 0.6608695652173913
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.26956521739130435  top10: 0.6347826086956522
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.23478260869565218  top10: 0.6869565217391305
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+top1: 0.0  top10: 0.0
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
