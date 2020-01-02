@@ -219,47 +219,48 @@ def main(_):
     model = '%s/%s/%s/*.npy' % (model_path, subset, net_model)
     models = sorted(glob.glob(model), key=os.path.getmtime)
     for idx, model_file in enumerate(models):
-        f = open(filename, 'a')
-        print("Testing model: " + model_file)
-        f.write("Testing model: " + model_file)
-        f.write('\n')
-        # load mat file
-        with tf.Graph().as_default():
-            inputs = tf.compat.v1.placeholder(shape=[None, 225, 225, 1], dtype=tf.float32)
-            if net_model == 'deep_sbir':
-                net = sketch_a_net_sbir(inputs)  # construct a network
-            elif net_model == 'DSSA':
-                net = sketch_a_net_dssa(inputs)
-            else:
-                print('Please define net_model')
-            init_ops = init_variables(model_file)  # initialization
-            # im = do_multiview_crop(im_file, CROPSIZE, 1)
-            sketch = do_multiview_crop(skt_file, CROPSIZE, 1)
-            config = load_model_config()
-            image_name = 'test_shoes_1.png'
-            image = imread(image_name, 2)
-            image = imresize(image, config.input_dim)
-            image = image.astype(np.single) - config.mean_val
-            transformed = do_multiview_crop(image, config.crop_dim, 2)
+        if model_file == models[0]:
+            f = open(filename, 'a')
+            print("Testing model: " + model_file)
+            f.write("Testing model: " + model_file)
+            f.write('\n')
+            # load mat file
+            with tf.Graph().as_default():
+                inputs = tf.compat.v1.placeholder(shape=[None, 225, 225, 1], dtype=tf.float32)
+                if net_model == 'deep_sbir':
+                    net = sketch_a_net_sbir(inputs)  # construct a network
+                elif net_model == 'DSSA':
+                    net = sketch_a_net_dssa(inputs)
+                else:
+                    print('Please define net_model')
+                init_ops = init_variables(model_file)  # initialization
+                # im = do_multiview_crop(im_file, CROPSIZE, 1)
+                sketch = do_multiview_crop(skt_file, CROPSIZE, 1)
+                config = load_model_config()
+                image_name = 'test_shoes_1.png'
+                image = imread(image_name, 2)
+                image = imresize(image, config.input_dim)
+                image = image.astype(np.single) - config.mean_val
+                transformed = do_multiview_crop(image, config.crop_dim, 2)
 
-            with tf.compat.v1.Session() as sess:
-                # init = tf.compat.v1.global_variables_initializer()
-                sess.run(init_ops)
-                draw_feats = sess.run(net, feed_dict={inputs: transformed})
-                # im_feats = sess.run(net, feed_dict={inputs: im})
-                sketch_feats = sess.run(net, feed_dict={inputs: sketch})
-            multiview_dists = compute_view_specific_distance(draw_feats, sketch_feats)
-            ave_dist = multiview_dists.mean(axis=0)
-            ranklist = ave_dist.flatten().argsort()
-            # print(ranklist)
-            dataset_api = SMTSApi(dataset_root='./data',
-                    name='shoes')
-            image_path = dataset_api.get_image_pathes(ranklist, 'test')
-            print('retrieval results for sketch: ', image_name)
-            vis_retrieval(image, image_path[:10], ' ')
+                with tf.compat.v1.Session() as sess:
+                    # init = tf.compat.v1.global_variables_initializer()
+                    sess.run(init_ops)
+                    draw_feats = sess.run(net, feed_dict={inputs: transformed})
+                    # im_feats = sess.run(net, feed_dict={inputs: im})
+                    sketch_feats = sess.run(net, feed_dict={inputs: sketch})
+                multiview_dists = compute_view_specific_distance(draw_feats, sketch_feats)
+                ave_dist = multiview_dists.mean(axis=0)
+                ranklist = ave_dist.flatten().argsort()
+                # print(ranklist)
+                dataset_api = SMTSApi(dataset_root='./data',
+                        name='shoes')
+                image_path = dataset_api.get_image_pathes(ranklist, 'test')
+                print('retrieval results for sketch: ', image_name)
+                vis_retrieval(image, image_path[:10], ' ')
 
-            print("\n")
-        f.close()
+                print("\n")
+            f.close()
 
 
 if __name__ == '__main__':
