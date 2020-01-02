@@ -6,6 +6,7 @@ Modified from **Sketch Me That Shoe** (https://github.com/seuliufeng/DeepSBIR) a
 All dataset and models are included
 
 **Steps**:
+
 (1) Download code and install dependencies, now only run on shoes prediction and training
 
 (2) Run triplet_sbir_train.py which will start training process, the default epoch is 200, the output is the trained model: model-iter***.npy together with the model-iter0.npy
