@@ -23,7 +23,13 @@ tensorflow: 2.0.0
 numpy: 1.16.1  
 scikit-learn: 0.22  
 keras: 2.3.1  
-cv2: 4.1.2  
+opencv-python: 4.1.2  
+tf-slim: get from https://github.com/adrianc-a/tf-slim/tree/remove_contrib and run setup.py in your python library site-packages folder  
+scipy: 1.4.0  
+scikit-image: 0.16.2  
+h5py: 2.10.0  
+matplotlib: 3.1.2  
+Pillow: 6.2.1  
 
 
 ## Note
