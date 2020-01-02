@@ -11,7 +11,7 @@ All dataset and models are included
 
 (2) Run triplet_sbir_train.py which will start training process, the default epoch is 200, the output is the trained model: model-iter***.npy together with the model-iter0.npy
 
-(3) Run triplet_sbir_test.py which will start the prediction process, store the test pic for sketches in the source folder and type in the name in the source code. The prediction will run on all models in the model/shoes/deep_sbir. The top 10 predictions will be shown.
+(3) Run triplet_sbir_test.py which will start the prediction process, store the test pic for sketches in the source folder and type in the name in the source code. The prediction will run on models with most epoches. The top 10 predictions will be shown.
 
 
 ## Requirements
