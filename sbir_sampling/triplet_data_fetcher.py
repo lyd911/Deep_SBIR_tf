@@ -1,7 +1,7 @@
 from multiprocessing import Process, Queue
-from sbir_data_util.batch_manager import MemoryBlockManager
-from image_proc import Transformer
-from sample_util import *
+from sbir_util.batch_manager import MemoryBlockManager
+from sbir_sampling.image_proc import Transformer
+from sbir_sampling.sample_util import *
 
 
 class TripletQueueRunner(object):
