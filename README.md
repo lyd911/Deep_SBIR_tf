@@ -5,7 +5,25 @@ Modified from **Sketch Me That Shoe** (https://github.com/seuliufeng/DeepSBIR) a
 
 All dataset and models are included
 
-And if you use the code for your research, please cite our paper:
+**Steps**:
+(1) Download code and install dependencies, now only run on shoes prediction and training
+
+(2) Run triplet_sbir_train.py which will start training process, the default epoch is 200, the output is the trained model: model-iter***.npy together with the model-iter0.npy
+
+(3) Run triplet_sbir_test.py which will start the prediction process, store the test pic for sketches in the source folder and type in the name in the source code. The prediction will run on all models in the model/shoes/deep_sbir. The top 10 predictions will be shown.
+
+
+**Note**: 
+
+(1) Please download the **pre-trained** model and **well-trained** models via https://drive.google.com/open?id=19LSQ5fbVVr3bPvE5Xuxd1zeMy1Y9ozC7;
+
+(2) The dataset for shoes can be found here: http://www.eecs.qmul.ac.uk/~qian/Qian's%20Materials/sbir_cvpr2016.tar
+
+(3) Implementation by **Caffe** can be found here: https://github.com/seuliufeng/DeepSBIR.
+
+
+
+And if you use the code for your research, please cite these papers:
 
     @inproceedings{yu2016sketch,
             title={Sketch me that shoe},
@@ -27,9 +45,3 @@ And if you use the code for your research, please cite our paper:
             publisher={Springer}
     }
     
-**Note**: 
-
-(1) Please download the **pre-trained** model and **well-trained** models via https://drive.google.com/open?id=19LSQ5fbVVr3bPvE5Xuxd1zeMy1Y9ozC7;
-
-(2) Implementation by **Caffe** can be found here: https://github.com/seuliufeng/DeepSBIR.
-
