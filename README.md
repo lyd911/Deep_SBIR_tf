@@ -14,6 +14,18 @@ All dataset and models are included
 (3) Run triplet_sbir_test.py which will start the prediction process, store the test pic for sketches in the source folder and type in the name in the source code. The prediction will run on all models in the model/shoes/deep_sbir. The top 10 predictions will be shown.
 
 
+**Requirements**
+
+python: 3.6.5
+pip: 19.3.1
+tensorflow: 2.0.0
+numpy: 1.16.1
+scikit-learn: 0.22
+keras: 2.3.1
+cv2: 4.1.2
+
+
+
 **Note**: 
 
 (1) Please download the **pre-trained** model and **well-trained** models via https://drive.google.com/open?id=19LSQ5fbVVr3bPvE5Xuxd1zeMy1Y9ozC7;
