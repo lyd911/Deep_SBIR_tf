@@ -452,3 +452,13 @@ Testing model: ./model/shoes/deep_sbir/model-iter200.npy
 Testing model: ./model/shoes/deep_sbir/model-iter0.npy
 Testing model: ./model/shoes/deep_sbir/model-iter200.npy
 Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter0.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy
+Testing model: ./model/shoes/deep_sbir/model-iter200.npy

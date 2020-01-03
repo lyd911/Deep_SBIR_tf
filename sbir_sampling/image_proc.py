@@ -1,6 +1,6 @@
 import numpy as np
 import numpy.random as nr
-from matplotlib import pyplot as plt
+
 try:
     from skimage.transform import rotate, resize
 except:
@@ -122,7 +122,6 @@ class Transformer:
         data = np.reshape(processed, (len(imlist), self._crop_size, self._crop_size, self._num_channels))
         return data
 
-
     def transform_all_with_bbox(self, imlist, bbox, flag='anc'):
         # print 'transform'
         processed = []
@@ -184,7 +183,6 @@ class Transformer:
         # data = np.concatenate(processed, axis=0)
         data = np.reshape(processed, (len(imlist), self._crop_size, self._crop_size, self._num_channels+1))
         return data
-
 
     def transform_all_part(self, imlist, bbox, flag='anc'):
         processed = []
@@ -263,7 +261,6 @@ class Transformer:
         data_part1 = np.reshape(processed1, (len(imlist), self._crop_size, self._crop_size, self._num_channels))
         data_part2 = np.reshape(processed2, (len(imlist), self._crop_size, self._crop_size, self._num_channels))
         return data_part1, data_part2
-
 
     def transform_bbox(self, imlist, bbox, flag='anc'):
         processed = []

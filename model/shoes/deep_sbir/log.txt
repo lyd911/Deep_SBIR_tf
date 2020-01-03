@@ -909,3 +909,25 @@ Iter 196: Loss Train: 0.20882936
 Iter 197: Loss Train: 0.15519777
 Iter 198: Loss Train: 0.18471292
 Iter 199: Loss Train: 0.18239725
+Iter 0: Loss Train: 0.2931576
+Loss Validation: [0.22662845]
+Iter 1: Loss Train: 0.26909012
+Iter 2: Loss Train: 0.24550276
+Iter 3: Loss Train: 0.24968316
+Iter 4: Loss Train: 0.23900768
+Iter 5: Loss Train: 0.2631346
+Iter 6: Loss Train: 0.29833215
+Iter 7: Loss Train: 0.27213204
+Iter 8: Loss Train: 0.26026946
+Iter 0: Loss Train: 0.26676887
+Loss Validation: [0.23123476]
+Iter 1: Loss Train: 0.24631442
+Iter 2: Loss Train: 0.22077282
+Iter 0: Loss Train: 0.23533995
+Loss Validation: [0.25996643]
+Iter 1: Loss Train: 0.24112307
+Iter 2: Loss Train: 0.30468637
+Iter 0: Loss Train: 0.2151162
+Loss Validation: [0.24293232]
+Iter 1: Loss Train: 0.29710656
+Iter 2: Loss Train: 0.26315993

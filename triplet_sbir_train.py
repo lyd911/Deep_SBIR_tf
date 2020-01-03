@@ -1,14 +1,11 @@
 import tensorflow as tf
 import tf_slim as slim
 import numpy as np
-from scipy.io import loadmat, savemat
-import scipy.spatial.distance as ssd
 from sbir_sampling import triplet_sampler_asy
-from sbir_util import *
-from ops import spatial_softmax, reshape_feats
-import os, errno
+from ops import spatial_softmax
+import os
 
-NET_ID = 0 #0 for step3 pre-trained model, 1 for step2 pre-trained model
+NET_ID = 0  # 0 for step3 pre-trained model, 1 for step2 pre-trained model
 
 
 def attentionNet(inputs, pool_method='sigmoid'):
@@ -16,7 +13,7 @@ def attentionNet(inputs, pool_method='sigmoid'):
     with slim.arg_scope([slim.conv2d],
                         activation_fn=tf.nn.relu,
                         weights_initializer=tf.compat.v1.truncated_normal_initializer(0.0, 0.1),
-                        weights_regularizer=tf.keras.regularizers.l2(0.5 * (0.0005)),
+                        weights_regularizer=tf.keras.regularizers.l2(0.5 * 0.0005),
                         trainable=True):
         net = slim.conv2d(inputs, 256, [1, 1], padding='SAME', scope='conv1')
         if pool_method == 'sigmoid':
@@ -31,7 +28,7 @@ def sketch_a_net_sbir(inputs, trainable):
     with slim.arg_scope([slim.conv2d, slim.fully_connected],
                         activation_fn=tf.nn.relu,
                         weights_initializer=tf.compat.v1.truncated_normal_initializer(0.0, 0.1),
-                        weights_regularizer=tf.keras.regularizers.l2(0.5 * (0.0005)),
+                        weights_regularizer=tf.keras.regularizers.l2(0.5 * 0.0005),
                         trainable=False):
         with slim.arg_scope([slim.conv2d], padding='VALID'):
             # x = tf.reshape(inputs, shape=[-1, 225, 225, 1])
@@ -54,7 +51,7 @@ def sketch_a_net_dssa(inputs, trainable):
     with slim.arg_scope([slim.conv2d, slim.fully_connected],
                         activation_fn=tf.nn.relu,
                         weights_initializer=tf.compat.v1.truncated_normal_initializer(0.0, 0.1),
-                        weights_regularizer=tf.keras.regularizers.l2(0.5 * (0.0005)),
+                        weights_regularizer=tf.keras.regularizers.l2(0.5 * 0.0005),
                         trainable=False):  # when test 'trainable=True', don't forget to change it
         with slim.arg_scope([slim.conv2d], padding='VALID'):
             # x = tf.reshape(inputs, shape=[-1, 225, 225, 1])
@@ -82,11 +79,11 @@ def sketch_a_net_dssa(inputs, trainable):
 
 
 def init_variables(model_file='./model/sketchnet_init.npy'):
-    if NET_ID==0:
+    if NET_ID == 0:
         pretrained_paras = ['conv1_s1', 'conv2_s1', 'conv3_s1', 'conv4_s1', 'conv5_s1', 'fc6_s1', 'fc7_sketch']
     else:
         pretrained_paras = ['conv1_s1', 'conv2_s1', 'conv3_s1', 'conv4_s1', 'conv5_s1', 'fc6_s1']
-    d = np.load(model_file,encoding="latin1").item()
+    d = np.load(model_file, encoding="latin1").item()
     init_ops = []  # a list of operations
     for var in tf.compat.v1.global_variables():
         for w_name in pretrained_paras:
@@ -101,19 +98,19 @@ def init_variables(model_file='./model/sketchnet_init.npy'):
                         # init_ops.append(var.assign(d[w_name+'/biases:0']))
                         init_ops.append(var.assign(d[w_name]['biases']))
                 except KeyError:
-                     if 'weights' in var.name:
+                    if 'weights' in var.name:
                         # using assign(src, dst) to assign the weights of pre-trained model to current network
                         init_ops.append(var.assign(d[w_name+'/weights:0']))
                         # init_ops.append(var.assign(d[w_name]['weights']))
-                     elif 'biases' in var.name:
+                    elif 'biases' in var.name:
                         init_ops.append(var.assign(d[w_name+'/biases:0']))
                         # init_ops.append(var.assign(d[w_name]['biases']))
                 except:
-                     if 'weights' in var.name:
+                    if 'weights' in var.name:
                         # using assign(src, dst) to assign the weights of pre-trained model to current network
                         init_ops.append(var.assign(d[w_name][0]))
                         # init_ops.append(var.assign(d[w_name]['weights']))
-                     elif 'biases' in var.name:
+                    elif 'biases' in var.name:
                         init_ops.append(var.assign(d[w_name][1]))
                         # init_ops.append(var.assign(d[w_name]['biases']))
     return init_ops

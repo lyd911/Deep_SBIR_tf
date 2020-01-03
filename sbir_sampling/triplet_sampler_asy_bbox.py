@@ -5,8 +5,6 @@ from sbir_sampling.image_proc import Transformer
 from sbir_sampling.sample_util import *
 import pylab as plt
 from scipy.io import loadmat
-# from PIL import Image
-# import numpy as np
 import skimage.transform
 
 
@@ -71,7 +69,8 @@ class TripletSamplingDataFetcher(Process):
             self.triplets, self.neg_list = load_triplets(triplet_path, self._phase)
         if self.att_flag:
             print('load attribute annotations')
-            mat_file = '/homes/qian/libsvm/libsvm-3.18/Project_2/Base_Function/step2-attribute/mat_file/attribute_annotation.mat'
+            mat_file = '/homes/qian/libsvm/libsvm-3.18/Project_2/Base_Function/step2-attribute/mat_file/' \
+                       'attribute_annotation.mat'
             if self._phase == 'TRAIN':
                 self.att = loadmat(mat_file)['att_trn'][:, 0:8]
             else:
@@ -129,32 +128,6 @@ class TripletSamplingDataFetcher(Process):
         anc_batch_trans = self.sketch_transformer.transform_all_with_bbox(anc_batch, bbox_inds, 'anc')
         pos_batch_trans = self.sketch_transformer.transform_all_with_bbox(pos_batch, bbox_inds, 'pos')
         neg_batch_trans = self.sketch_transformer.transform_all_with_bbox(neg_batch, bbox_inds, 'neg')
-        # print 'finish transforming'
-        # anc_batch_trans = self.sketch_transformer.transform_all(anc_batch)
-        # pos_batch_trans = self.sketch_transformer.transform_all(pos_batch)
-        # neg_batch_trans = self.sketch_transformer.transform_all(neg_batch)
-
-        # if self._phase == 'TRAIN' and (self.mode=='whole-part' or self.mode=='part'):
-        #     anc_batch_part1, anc_batch_part2 = self.sketch_transformer.transform_all_part(anc_batch, bbox_inds, 'anc')
-        #     pos_batch_part1, pos_batch_part2 = self.sketch_transformer.transform_all_part(pos_batch, bbox_inds, 'pos')
-        #     neg_batch_part1, neg_batch_part2 = self.sketch_transformer.transform_all_part(neg_batch, bbox_inds, 'neg')
-        #     if self.mode=='whole-part':
-        #         anc_batch = np.concatenate((anc_batch_trans, anc_batch_part1, anc_batch_part2),axis=0)
-        #         pos_batch = np.concatenate((pos_batch_trans, pos_batch_part1, pos_batch_part2),axis=0)
-        #         neg_batch = np.concatenate((neg_batch_trans, neg_batch_part1, neg_batch_part2),axis=0)
-        #     else:
-        #         anc_batch = np.concatenate((anc_batch_part1, anc_batch_part2),axis=0)
-        #         pos_batch = np.concatenate((pos_batch_part1, pos_batch_part2),axis=0)
-        #         neg_batch = np.concatenate((neg_batch_part1, neg_batch_part2),axis=0)
-        #     if self.att_flag:
-        #         dim_att = self.att.shape[1]
-        #         att_anc_batch = np.reshape(att_anc_list, (len(anc_inds), dim_att))
-        #         att_pos_batch = np.reshape(att_pos_list, (len(anc_inds), dim_att))
-        #         att_neg_batch = np.reshape(att_neg_list, (len(anc_inds), dim_att))
-        #         self._queue.put((anc_batch, pos_batch, neg_batch, att_anc_batch, att_pos_batch, att_neg_batch))
-        #     else:
-        #         self._queue.put((anc_batch, pos_batch, neg_batch))
-        # else:
         if self.att_flag:
             dim_att = self.att.shape[1]
             att_anc_batch = np.reshape(att_anc_list, (len(anc_inds), dim_att))
@@ -286,9 +259,7 @@ def vis_batch_whole_mask(anc, pos, neg, n_vis=5):
     neg *= _proc_mask(neg_mask)
 
     # anc_mask = pos_mask = neg_mask = 1.
-    print ('%0.3f, %0.3f, %0.3f' % (anc.max(),
-                                    pos.max(),
-                                    neg.max()))
+    print('%0.3f, %0.3f, %0.3f' % (anc.max(), pos.max(), neg.max()))
 
     num = anc.shape[0] / 1
     sample_inds = np.arange(num)
@@ -314,7 +285,7 @@ def vis_batch_whole_mask(anc, pos, neg, n_vis=5):
         plt.show()
 
 
-def vis_batch_with_att(anc, pos, neg, att, n_vis=5):
+def vis_batch_with_att(anc, pos, neg, n_vis=5):
     import pylab as plt
     num = anc.shape[0] / 1
     sample_inds = np.arange(num)

@@ -63,11 +63,12 @@ class TripletSamplingDataFetcher(Process):
         else:
             self.triplets, self.neg_list = load_triplets(triplet_path, self._phase)
         if self.att_flag:
-            mat_file = '/homes/qian/libsvm/libsvm-3.18/Project_2/Base_Function/step2-attribute/mat_file/attribute_annotation.mat'
-            if self._phase=='TRAIN':
-                self.att = loadmat(mat_file)['att_trn'][:,0:8]
+            mat_file = '/homes/qian/libsvm/libsvm-3.18/Project_2/Base_Function/step2-attribute/mat_file/' \
+                       'attribute_annotation.mat'
+            if self._phase == 'TRAIN':
+                self.att = loadmat(mat_file)['att_trn'][:, 0:8]
             else:
-                self.att = loadmat(mat_file)['att_tst'][:,0:8]
+                self.att = loadmat(mat_file)['att_tst'][:, 0:8]
 
     def get_next_batch(self):
         # print 'Start fetching batch %d' % (self.idx)
@@ -107,7 +108,6 @@ class TripletSamplingDataFetcher(Process):
                 att_anc_list.append(self.att[anc_id,:])
                 att_pos_list.append(self.att[pos_id,:])
                 att_neg_list.append(self.att[neg_id,:])
-
 
         # apply transform
         anc_batch_trans = self.sketch_transformer.transform_all(anc_batch)
@@ -159,7 +159,7 @@ class TripletSamplingDataFetcher(Process):
             self.get_next_batch()
 
 
-def vis_batch(anc, pos ,neg, n_vis=5):
+def vis_batch(anc, pos, neg, n_vis=5):
     num = anc.shape[0] / 3
     sample_inds = np.arange(num)
     np.random.shuffle(sample_inds)
@@ -185,7 +185,7 @@ def vis_batch(anc, pos ,neg, n_vis=5):
         plt.show()
 
 
-def vis_batch_part(anc, pos ,neg, n_vis=5):
+def vis_batch_part(anc, pos, neg, n_vis=5):
     num = anc.shape[0] / 2
     sample_inds = np.arange(num)
     np.random.shuffle(sample_inds)
@@ -211,7 +211,7 @@ def vis_batch_part(anc, pos ,neg, n_vis=5):
         plt.show()
 
 
-def vis_batch_whole(anc, pos ,neg, n_vis=5):
+def vis_batch_whole(anc, pos, neg, n_vis=5):
     import pylab as plt
     num = anc.shape[0] / 1
     sample_inds = np.arange(num)
@@ -238,7 +238,7 @@ def vis_batch_whole(anc, pos ,neg, n_vis=5):
         plt.show()
 
 
-def vis_batch_with_att(anc, pos, neg, att, n_vis=5):
+def vis_batch_with_att(anc, pos, neg, n_vis=5):
     import pylab as plt
     num = anc.shape[0] / 1
     sample_inds = np.arange(num)
@@ -291,11 +291,9 @@ if __name__ == '__main__':
             anc, pos, neg = triplet_sampler.get_next_batch()
         import pdb
         pdb.set_trace()
-        if mode=='whole-part':
+        if mode == 'whole-part':
             vis_batch(anc, pos, neg, 3)
-        elif mode=='part':
+        elif mode == 'part':
             vis_batch_part(anc, pos, neg, 3)
         else:
             vis_batch_whole(anc, pos, neg, 3)
-
-

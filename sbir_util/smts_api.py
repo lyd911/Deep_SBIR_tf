@@ -1,11 +1,9 @@
 import json
 import os
-from scipy.io import loadmat, savemat
+from scipy.io import loadmat
 
 
 def read_json(fpath):
-    # import pdb
-    # pdb.set_trace()
     with open(fpath) as data_file:
         data = json.load(data_file)
     return data
@@ -23,8 +21,6 @@ class SMTSApi(object):
     def __init__(self, ann_path=None, dataset_root=None, name=None):
         self._dataset_root = dataset_root
         self._dbname = name
-        # import pdb
-        # pdb.set_trace()
         flag_json = 1
         if flag_json == 1:
             if ann_path is None:
@@ -41,10 +37,7 @@ class SMTSApi(object):
     def name(self):
         return self._dbname
 
-
     def get_triplets(self, target_set='train'):
-        # import pdb
-        # pdb.set_trace()
         if self._annotation is None:
             raise Exception('annotations not loaded')
         elif target_set.lower() == 'train':
@@ -54,10 +47,7 @@ class SMTSApi(object):
         else:
             raise Exception('unknown subset: should be train or test')
 
-
     def get_triplets_bbox(self, target_set='train'):
-        # import pdb
-        # pdb.set_trace()
         if self._annotation is None:
             raise Exception('annotations not loaded')
         elif target_set.lower() == 'train':

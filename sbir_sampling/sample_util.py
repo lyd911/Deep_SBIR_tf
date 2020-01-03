@@ -18,7 +18,7 @@ def sample_triplets(anc_inds, triplets, neg_list, hard_ratio, phase):
             pos_id = 255
         if phase.lower() == 'train':
             ptr = 0
-            while (pos_id == key_num or neg_id == key_num):
+            while pos_id == key_num or neg_id == key_num:
                 idx = nr.randint(len(tuples))
                 pos_id, neg_id = tuples[idx]
                 ptr += 1
@@ -55,7 +55,7 @@ def sample_triplets_with_filter_bk(anc_inds, triplets, bbox, neg_list, hard_rati
             key_num = 255
             pos_id = 255
         if phase.lower() == 'train':
-            while (pos_id == key_num or neg_id == key_num):
+            while pos_id == key_num or neg_id == key_num:
                 idx = nr.randint(len(tuples))
                 pos_id, neg_id = tuples[idx]
             pos_inds.append(pos_id)
@@ -94,7 +94,7 @@ def sample_triplets_with_filter(anc_inds, triplets, bbox, neg_list, hard_ratio, 
             key_num = 255
             pos_id = 255
         if phase.lower() == 'train':
-            while (pos_id == key_num or neg_id == key_num):
+            while pos_id == key_num or neg_id == key_num:
                 idx = nr.randint(len(tuples))
                 pos_id, neg_id = tuples[idx]
                 box_tmp = bbox[anc_id][idx]
@@ -124,7 +124,6 @@ def sample_triplets_with_filter(anc_inds, triplets, bbox, neg_list, hard_ratio, 
         return pos_inds, neg_inds, bbox_inds
 
 
-
 def sample_triplets_with_filter_refined(anc_inds, triplets, bbox, neg_list, hard_ratio, phase):
     pos_inds = []
     neg_inds = []
@@ -137,7 +136,7 @@ def sample_triplets_with_filter_refined(anc_inds, triplets, bbox, neg_list, hard
         else:
             key_num = 255
             pos_id = 255
-        while (pos_id == key_num or neg_id == key_num):
+        while pos_id == key_num or neg_id == key_num:
             idx = nr.randint(len(tuples))
             pos_id, neg_id = tuples[idx]
         pos_inds.append(pos_id)
@@ -165,7 +164,6 @@ def sample_triplets_pos_neg(anc_inds, triplets, neg_list, hard_ratio):
             neg_id = neg_list[anc_id, nidx]
         neg_inds.append(neg_id)
     return pos_inds, neg_inds
-
 
 
 def sample_triplets_trueMatch(anc_inds, phase):

@@ -1,9 +1,7 @@
-from multiprocessing import Process, Queue
-from sbir_sampling.image_proc import Transformer
+from multiprocessing import Queue
 from sbir_util.batch_manager import MemoryBlockManager
 from sbir_sampling.image_proc import Transformer
 from sbir_sampling.sample_util import *
-from scipy.io import loadmat
 
 
 class TripletSamplingLayer(object):

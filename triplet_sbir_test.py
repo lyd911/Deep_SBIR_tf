@@ -1,20 +1,19 @@
 import tensorflow as tf
 import tf_slim as slim
 import numpy as np
-from scipy.io import loadmat, savemat
+from scipy.io import loadmat
 import scipy.spatial.distance as ssd
 import glob
 from ops import spatial_softmax
 import h5py
 from sbir_util.smts_api import SMTSApi
 import matplotlib.pyplot as plt
-from skimage.io import imread, imshow
-from skimage.transform import resize
+from skimage.io import imread
 import os
-from sbir_retrieval import sketch_retrieval, cache_features, imresize
-from PIL import Image, ImageDraw, ImageFont
+from sbir_retrieval import imresize
+from PIL import Image
 from sbir_config import load_model_config
-import cv2
+
 
 NUM_VIEWS = 10
 CROPSIZE = 225
@@ -25,7 +24,7 @@ def attentionNet(inputs, pool_method):
     with slim.arg_scope([slim.conv2d],
                         activation_fn=tf.nn.relu,
                         weights_initializer=tf.compat.v1.truncated_normal_initializer(0.0, 0.1),
-                        weights_regularizer=tf.keras.regularizers.l2(0.5 * (0.0005)),
+                        weights_regularizer=tf.keras.regularizers.l2(0.5 * 0.0005),
                         trainable=True):
         net = slim.conv2d(inputs, 256, [1, 1], padding='SAME', scope='conv1')
         if pool_method == 'sigmoid':
@@ -42,7 +41,7 @@ def sketch_a_net_sbir(inputs):
     with slim.arg_scope([slim.conv2d, slim.fully_connected],
                         activation_fn=tf.nn.relu,
                         weights_initializer=tf.compat.v1.truncated_normal_initializer(0.0, 0.1),
-                        weights_regularizer=tf.keras.regularizers.l2(0.5 * (0.0005)),
+                        weights_regularizer=tf.keras.regularizers.l2(0.5 * 0.0005),
                         trainable=False):
         with slim.arg_scope([slim.conv2d], padding='VALID'):
             conv1 = slim.conv2d(inputs, 64, [15, 15], 3, scope='conv1_s1')
@@ -64,7 +63,7 @@ def sketch_a_net_dssa(inputs, pool_method='softmax'):
     with slim.arg_scope([slim.conv2d, slim.fully_connected],
                         activation_fn=tf.nn.relu,
                         weights_initializer=tf.compat.v1.truncated_normal_initializer(0.0, 0.1),
-                        weights_regularizer=tf.keras.regularizers.l2(0.5 * (0.0005)),
+                        weights_regularizer=tf.keras.regularizers.l2(0.5 * 0.0005),
                         trainable=False):
         with slim.arg_scope([slim.conv2d], padding='VALID'):
             conv1 = slim.conv2d(inputs, 64, [15, 15], 3, scope='conv1_s1')
@@ -75,7 +74,7 @@ def sketch_a_net_dssa(inputs, pool_method='softmax'):
             conv4 = slim.conv2d(conv3, 256, [3, 3], padding='SAME', scope='conv4_s1')
             conv5 = slim.conv2d(conv4, 256, [3, 3], padding='SAME', scope='conv5_s1')
             conv5 = slim.max_pool2d(conv5, [3, 3], scope='pool3')
-            if pool_method=='sigmoid':
+            if pool_method == 'sigmoid':
                 att_mask, att_logits = attentionNet(conv5, pool_method)
             else:
                 att_mask = attentionNet(conv5, pool_method)
@@ -130,9 +129,9 @@ def do_multiview_crop(fname, cropsize, format_flag):
         data = fname
         # data = np.array(dic['data'])
         data = data.transpose(1, 0)
-    if len(data.shape) == 2: # single sketch
+    if len(data.shape) == 2:  # single sketch
         data = data[np.newaxis, np.newaxis, :, :]  # nxcxhxw
-    elif len(data.shape) == 3: # sketch
+    elif len(data.shape) == 3:  # sketch
         n, h, w = data.shape
         data = data.reshape((n, 1, h, w))
     n, c, h, w = data.shape
@@ -183,7 +182,7 @@ def calculate_accuracy(dist):
     return top1, top10
 
 
-def vis_retrieval(query, results, true_match, n_imgs_per_row=5):
+def vis_retrieval(results):
     for i in range(10):
         plt.subplot(2, 5, i+1)
         image = Image.open(results[i])
@@ -211,7 +210,7 @@ def main(_):
     feat_path_p = './feats/Qian_release/feats_p.mat'
     feat_path_s = './feats/Qian_release/feats_s.mat'
     dstPath = './model'
-    net_model = 'deep_sbir' # 'deep_sbir' or 'DSSA'
+    net_model = 'deep_sbir'  # 'deep_sbir' or 'DSSA'
     modelID = '%s/%s/val.txt' % (subset, net_model)
     filename = dstPath+'/'+modelID
     mean = 250.42
@@ -257,7 +256,7 @@ def main(_):
                         name='shoes')
                 image_path = dataset_api.get_image_pathes(ranklist, 'test')
                 print('retrieval results for sketch: ', image_name)
-                vis_retrieval(image, image_path[:10], ' ')
+                vis_retrieval(image_path[:10])
 
                 print("\n")
             f.close()

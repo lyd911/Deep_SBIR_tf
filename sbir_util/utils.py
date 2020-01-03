@@ -1,9 +1,10 @@
 """
 Some codes from https://github.com/Newmu/dcgan_code
 """
+
+
 from __future__ import division
 import math
-import json
 import random
 import pprint
 import scipy.misc
@@ -235,7 +236,7 @@ def mkdir_for_models(out_dir, sv_dir, cr_dirs):
         mkdir_if_missing(os.path.join(output_dir, cr_dir))
 
 
-def mkdir_for_models_train(out_dir='./', sv_dir = './', chk_dir = 'checkpoints', log_dir = 'logs', ts_dir = 'train_samples'):
+def mkdir_for_models_train(out_dir='./', sv_dir='./', chk_dir='checkpoints', log_dir='logs', ts_dir='train_samples'):
     output_dir = os.path.join(out_dir, sv_dir)
     cr_dirs = [chk_dir, log_dir, ts_dir]
     for cr_dir in cr_dirs:
@@ -255,7 +256,7 @@ def print_log(log_prefix, FLAGS):
 
     # print header
     print("===============================================")
-    print("Trainning ", net_name, " in this framework")
+    print("Training ", net_name, " in this framework")
     print("===============================================")
 
     print("Tensorflow flags:")

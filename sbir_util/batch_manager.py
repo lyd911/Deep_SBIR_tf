@@ -1,7 +1,5 @@
 from scipy.io import loadmat
 from time import time
-import h5py
-import numpy as np
 
 
 class MemoryBlockManager:
