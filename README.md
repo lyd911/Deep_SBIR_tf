@@ -1,7 +1,7 @@
 # Deep_SBIR_tf
 Implementation of **Sketch Me That Shoe** (http://www.eecs.qmul.ac.uk/~qian/Project_cvpr16.html) and **Deep Spatial-Semantic Attention for Fine-grained Sketch-based Image Retrieval**
 
-Modified from **Sketch Me That Shoe** (https://github.com/seuliufeng/DeepSBIR) and its **TensorFlow implementation**:  https://github.com/yuchuochuo1023/Deep_SBIR_tf/tree/master
+Modified from **Sketch Me That Shoe** (https://github.com/yuchuochuo1023/Deep_SBIR_tf/tree/master) and its **Caffe implementation**:  https://github.com/seuliufeng/DeepSBIR
 
 All dataset and models are included
 
@@ -38,7 +38,6 @@ Pillow: 6.2.1
 
 (2) The dataset for shoes can be found here: http://www.eecs.qmul.ac.uk/~qian/Qian's%20Materials/sbir_cvpr2016.tar
 
-(3) Implementation by **Caffe** can be found here: https://github.com/seuliufeng/DeepSBIR.
 
 
 
