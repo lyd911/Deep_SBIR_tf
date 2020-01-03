@@ -6,13 +6,13 @@ import scipy.spatial.distance as ssd
 import glob
 from ops import spatial_softmax
 import h5py
-from sbir_util.smts_api import SMTSApi
 import matplotlib.pyplot as plt
 from skimage.io import imread
 import os
-from sbir_retrieval import imresize
 from PIL import Image
-from sbir_config import load_model_config
+import json
+from skimage.transform import resize
+from collections import namedtuple
 
 
 NUM_VIEWS = 10
@@ -200,6 +200,128 @@ def reshape_feature(target):
         return target
     else:
         raise Exception('unknown dim')
+
+
+def imresize(im, input_dim, force_color=False):
+    def is_single_channel(im):
+        return im.ndim == 2 or (im.ndim == 3 and im.shape[-1] == 1)
+    if im.shape[0] != input_dim:
+        im = resize(im, (input_dim, input_dim), preserve_range=True)
+    if force_color and is_single_channel(im):
+        im = np.tile(im.reshape([input_dim, input_dim, 1]), [1, 1, 3])
+    return im
+
+
+def read_json(fpath):
+    with open(fpath) as data_file:
+        data = json.load(data_file)
+    return data
+
+
+def read_mat(fpath):
+    with open(fpath) as data_file:
+        import pdb
+        pdb.set_trace()
+        data = loadmat(data_file)
+    return data
+
+
+class SMTSApi(object):
+    def __init__(self, ann_path=None, dataset_root=None, name=None):
+        self._dataset_root = dataset_root
+        self._dbname = name
+        flag_json = 1
+        if flag_json == 1:
+            if ann_path is None:
+                ann_path = os.path.join(dataset_root, name,
+                                        '%s_annotation.json' % name)
+            self._annotation = read_json(ann_path)
+        else:
+            if ann_path is None:
+                ann_path = os.path.join(dataset_root, name,
+                                        '%s_annotation.mat' % name)
+            self._annotation = read_mat(ann_path)
+
+    @property
+    def name(self):
+        return self._dbname
+
+    def get_triplets(self, target_set='train'):
+        if self._annotation is None:
+            raise Exception('annotations not loaded')
+        elif target_set.lower() == 'train':
+            return self._annotation['train']['triplets']
+        elif target_set.lower() == 'test':
+            return self._annotation['test']['triplets']
+        else:
+            raise Exception('unknown subset: should be train or test')
+
+    def get_triplets_bbox(self, target_set='train'):
+        if self._annotation is None:
+            raise Exception('annotations not loaded')
+        elif target_set.lower() == 'train':
+            return self._annotation['train']['triplets'], self._annotation['train']['bbox']
+        elif target_set.lower() == 'test':
+            return self._annotation['test']['triplets'], self._annotation['test']['bbox']
+        else:
+            raise Exception('unknown subset: should be train or test')
+
+    def get_triplets_mat(self, target_set='train'):
+        if self._annotation is None:
+            raise Exception('annotations not loaded')
+        elif target_set.lower() == 'train':
+            return self._annotation['pos_list'], self._annotation['neg_list_hard'], self._annotation['neg_list_easy']
+        elif target_set.lower() == 'test':
+            return self._annotation['test']['triplets']
+        else:
+            raise Exception('unknown subset: should be train or test')
+
+    def get_images(self, target_set='train'):
+        if target_set.lower() == 'train':
+            return self._annotation['train']['images']
+        elif target_set.lower() == 'test':
+            return self._annotation['test']['images']
+        else:
+            raise Exception('unknown subset: should be train or test')
+
+    def get_image_pathes(self, image_inds, target_set):
+        images = self.get_images(target_set)
+        im_root = os.path.join(self._dataset_root, self._dbname,
+                               target_set, 'images')
+        impathes = []
+        for image_id in image_inds:
+            impathes.append(os.path.join(im_root, images[image_id]))
+        return impathes
+
+    def get_image_path(self, image_id, target_set):
+        if self._dataset_root is None:
+            raise Exception('should pass dataset root in initialization')
+        im_name = self._annotation[target_set]['images'][image_id]
+        return os.path.join(self._dataset_root, '%s/%s/%s' % (target_set, 'images', im_name))
+
+    def get_sketch_path(self, sketh_id, target_set):
+        if self._dataset_root is None:
+            raise Exception('should pass dataset root in initialization')
+        sk_name = self._annotation[target_set]['images'][sketh_id]
+        return os.path.join(self._dataset_root, '%s/%s/%s' % (target_set, 'sketches', sk_name))
+
+
+def load_model_config(dataset=''):
+    config = {
+        'verbose': False,
+        'gpu_id': 0,
+        'input_dim': 256,
+        'crop_dim': 225,
+        'mean_val': 250.42, # mean value
+        'batchsize': 128,  # batchsize for feature extraction
+        'feat_layer':'norm7_sketch',
+        'dataset': dataset,
+        'DATASET_ROOT': 'data/',
+        'deploy_file': 'data/models/sketch_fc7_norm_deploy.prototxt',
+        'FEAT_PATH': 'data/feats/%s_feats_val.mat' % dataset,
+        'DB_PATH': 'data/dbs/%s/%s_edge_db_val.mat' % (dataset, dataset)
+    }
+    return namedtuple('Struct', config.keys())(*config.values())
 
 
 def main(_):
