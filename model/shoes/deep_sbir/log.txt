@@ -931,3 +931,10 @@ Iter 0: Loss Train: 0.2151162
 Loss Validation: [0.24293232]
 Iter 1: Loss Train: 0.29710656
 Iter 2: Loss Train: 0.26315993
+Iter 0: Loss Train: 0.27127826
+Loss Validation: [0.24840252]
+Iter 1: Loss Train: 0.2844075
+Iter 0: Loss Train: 0.27200052
+Loss Validation: [0.22806533]
+Iter 1: Loss Train: 0.22065496
+Iter 2: Loss Train: 0.24319641

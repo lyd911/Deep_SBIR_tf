@@ -4,7 +4,6 @@ import numpy as np
 from scipy.io import loadmat
 import scipy.spatial.distance as ssd
 import glob
-from ops import spatial_softmax
 import h5py
 import matplotlib.pyplot as plt
 from skimage.io import imread
@@ -17,6 +16,26 @@ from collections import namedtuple
 
 NUM_VIEWS = 10
 CROPSIZE = 225
+
+
+def spatial_softmax(fm):
+    fm_shape = _get_tensor_shape(fm)
+    n_grids = fm_shape[1] ** 2
+    # transpose feature map
+    fm = tf.transpose(a=fm, perm=[0, 3, 1, 2])
+    t_fm_shape = _get_tensor_shape(fm)
+    fm = tf.reshape(fm, shape=[-1, n_grids])
+    # apply softmax
+    prob = tf.nn.softmax(fm)
+    # reshape back
+    prob = tf.reshape(prob, shape=t_fm_shape)
+    prob = tf.transpose(a=prob, perm=[0, 2, 3, 1])
+    return prob
+
+
+def _get_tensor_shape(x):
+    s = x.get_shape().as_list()
+    return [i if i is not None else -1 for i in s]
 
 
 def attentionNet(inputs, pool_method):
