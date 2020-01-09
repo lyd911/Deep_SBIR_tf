@@ -12,6 +12,8 @@ from scipy.io import loadmat
 from time import time
 import json
 
+
+
 NET_ID = 0  # 0 for step3 pre-trained model, 1 for step2 pre-trained model
 
 
@@ -744,7 +746,7 @@ def rand_rotate(im, rotate_amp):
 def main(subset, sketch_dir, image_dir, sketch_dir_te, image_dir_te, triplet_path, mean, hard_ratio, batch_size, phase, phase_te, net_model):
 
     # ITERATIONS = 20000
-    ITERATIONS = 200
+    ITERATIONS = 10
     VALIDATION_TEST = 200
     perc_train = 0.9
     MARGIN = 0.3
@@ -760,6 +762,7 @@ def main(subset, sketch_dir, image_dir, sketch_dir_te, image_dir_te, triplet_pat
     train_anchor_data = tf.compat.v1.placeholder(tf.float32, shape=(None, 225, 225, 1), name="anchor")
     train_positive_data = tf.compat.v1.placeholder(tf.float32, shape=(None, 225, 225, 1), name="positive")
     train_negative_data = tf.compat.v1.placeholder(tf.float32, shape=(None, 225, 225, 1), name="negative")
+    output_data = tf.compat.v1.placeholder(tf.float32, shape=(None, 225, 225, 1))
 
     # Creating the architecture
     if net_model == 'deep_sbir':
@@ -768,12 +771,14 @@ def main(subset, sketch_dir, image_dir, sketch_dir_te, image_dir_te, triplet_pat
             tf.compat.v1.get_variable_scope().reuse_variables()
             train_positive = sketch_a_net_sbir(tf.cast(train_positive_data, tf.float32) - mean, True)
             train_negative = sketch_a_net_sbir(tf.cast(train_negative_data, tf.float32) - mean, True)
+            output = sketch_a_net_sbir(tf.cast(output_data, tf.float32) - mean, True)
     elif net_model == 'DSSA':
         with tf.compat.v1.variable_scope('for_reuse_scope'):
             train_anchor = sketch_a_net_dssa(tf.cast(train_anchor_data, tf.float32) - mean, True)
             tf.compat.v1.get_variable_scope().reuse_variables()
             train_positive = sketch_a_net_dssa(tf.cast(train_positive_data, tf.float32) - mean, True)
             train_negative = sketch_a_net_dssa(tf.cast(train_negative_data, tf.float32) - mean, True)
+            output = sketch_a_net_dssa(tf.cast(output_data, tf.float32) - mean, True)
     else:
         print('Please define the net_model')
 
@@ -790,7 +795,7 @@ def main(subset, sketch_dir, image_dir, sketch_dir_te, image_dir_te, triplet_pat
     optimizer = tf.compat.v1.train.MomentumOptimizer(learning_rate=learning_rate, momentum=0.9).minimize(loss,
                                                                                                        global_step=batch)
     #validation_prediction = tf.nn.softmax(lenet_validation)
-    # saver = tf.train.Saver(max_to_keep=5)
+    # saver = tf.compat.v1.train.Saver(max_to_keep=1)
     dst_path = './model'
     model_id = '%s/%s/log.txt' % (subset, net_model)
     filename = dst_path+'/'+model_id
@@ -803,13 +808,11 @@ def main(subset, sketch_dir, image_dir, sketch_dir_te, image_dir_te, triplet_pat
         for step in range(ITERATIONS):
             f = open(filename, 'a')
             batch_anchor, batch_positive, batch_negative = data_sampler.get_next_batch()
-
             feed_dict = {train_anchor_data: batch_anchor,
                          train_positive_data: batch_positive,
                          train_negative_data: batch_negative
                          }
             _, l = session.run([optimizer, loss], feed_dict=feed_dict)
-            # save_path = saver.save(session, model_path, global_step=step)
             print("Iter %d: Loss Train %f" % (step+pre_step, l))
             f.write("Iter "+str(step+pre_step) + ": Loss Train: " + str(l))
             f.write("\n")
@@ -834,7 +837,9 @@ def main(subset, sketch_dir, image_dir, sketch_dir_te, image_dir_te, triplet_pat
                 f.write("Loss Validation: " + str(lv))
                 f.write("\n")
             f.close()
-
+        builder = tf.compat.v1.saved_model.builder.SavedModelBuilder('./model/shoes/models')
+        builder.add_meta_graph_and_variables(session, ['deep_sbir'])
+        builder.save()
 
 if __name__ == '__main__':
     # 'deep_sbir'(the model of cvpr16) or 'DSSA'(the model of iccv17)
